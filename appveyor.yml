@@ -36,7 +36,7 @@ before_build:
       Invoke-WebRequest "https://dot.net/v1/dotnet-install.ps1" -OutFile dotnet-install.ps1
       & ./dotnet-install.ps1 -Version $cliVersion -InstallDir $installDir
       $env:PATH = "$installDir;$installDir\dotnet;$env:PATH"
-- ps: dotnet tool install --global Cake.Tool
+- ps: dotnet tool install --global Cake.Tool --version 6.0.0
 
 # build
 build_script:
