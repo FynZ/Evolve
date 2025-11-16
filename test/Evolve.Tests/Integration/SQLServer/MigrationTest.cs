@@ -8,7 +8,7 @@ using static EvolveDb.Tests.TestContext;
 
 namespace EvolveDb.Tests.Integration.SQLServer
 {
-    public record MigrationTest(ITestOutputHelper Output) : DbContainerFixture<SQLServerContainer>
+    public sealed class MigrationTest(ITestOutputHelper Output) : DbContainerFixture<SQLServerContainer>
     {
         public const string DbName = "my_database_2";
 

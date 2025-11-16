@@ -7,7 +7,7 @@ using Xunit;
 
 namespace EvolveDb.Tests.Infrastructure
 {
-    public abstract record DbContainerFixture<T> : IAsyncLifetime where T : IDbContainer, new()
+    public abstract class DbContainerFixture<T> : IAsyncLifetime where T : IDbContainer, new()
     {
         private static readonly SemaphoreSlim Semaphore = new(1);
 
@@ -18,7 +18,7 @@ namespace EvolveDb.Tests.Infrastructure
         public virtual bool MustRunContainer { get; } = TestContext.Local;
         public virtual Action Initialize { get; }
 
-        public DbConnection CreateDbConnection() => _container.CreateDbConnection();
+        internal DbConnection CreateDbConnection() => _container.CreateDbConnection();
 
         public async Task InitializeAsync()
         {

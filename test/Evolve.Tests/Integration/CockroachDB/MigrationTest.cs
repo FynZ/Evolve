@@ -5,7 +5,7 @@ using static EvolveDb.Tests.TestContext;
 
 namespace EvolveDb.Tests.Integration.CockroachDb
 {
-    public record MigrationTests(ITestOutputHelper Output) : DbContainerFixture<CockroachDBContainer>
+    public sealed class MigrationTests(ITestOutputHelper Output) : DbContainerFixture<CockroachDBContainer>
     {
         [Fact(Skip = "System.InvalidOperationException : This NpgsqlTransaction has completed; it is no longer usable.")]
         //[FactSkippedOnAppVeyor]

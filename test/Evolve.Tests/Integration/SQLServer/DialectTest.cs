@@ -7,7 +7,7 @@ using Xunit;
 
 namespace EvolveDb.Tests.Integration.SQLServer
 {
-    public record DialectTest : DbContainerFixture<SQLServerContainer>
+    public sealed class DialectTest : DbContainerFixture<SQLServerContainer>
     {
         public const string DbName = "my_database_1";
 

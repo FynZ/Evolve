@@ -1,4 +1,6 @@
-﻿namespace EvolveDb.Cli;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace EvolveDb.Cli;
 
 using Configuration;
 using Dialect;
@@ -9,6 +11,7 @@ using System.Linq;
 using AllowedValuesAttribute = McMaster.Extensions.CommandLineUtils.AllowedValuesAttribute;
 
 [Command(ResponseFileHandling = ResponseFileHandling.ParseArgsAsSpaceSeparated)]
+[RequiresUnreferencedCode("This functionality is not compatible with trimming")]
 class Program
 {
     private static readonly Evolve Default = new(new System.Data.SQLite.SQLiteConnection("Data Source=:memory:"));
@@ -118,7 +121,7 @@ class Program
 
     [Option("-f|--embedded-resource-filter", "When set, exclude embedded migration scripts that do not start with one of these filters.", CommandOptionType.MultipleValue)]
     public string[] EmbeddedResourceFilters { get; }
- 
+
     [Option("--retry-repeatable", "When set, execute repeatedly all repeatable migrations for as long as the number of errors decreases, so that you can name them more easily. Default: false", CommandOptionType.SingleValue)]
     public bool RetryRepeatableMigrationsUntilNoError { get; } = Default.RetryRepeatableMigrationsUntilNoError;
 

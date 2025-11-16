@@ -5,7 +5,7 @@ using static EvolveDb.Tests.TestContext;
 
 namespace EvolveDb.Tests.Integration.Cassandra
 {
-    public record MigrationTest(ITestOutputHelper Output) : DbContainerFixture<CassandraContainer>
+    public sealed class MigrationTest(ITestOutputHelper Output) : DbContainerFixture<CassandraContainer>
     {
         [FactSkippedOnAppVeyor]
         [Category(Test.Cassandra)]

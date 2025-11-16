@@ -7,7 +7,7 @@ using static EvolveDb.Tests.TestContext;
 
 namespace EvolveDb.Tests.Integration.PostgregSql
 {
-    public record MigrationTests(ITestOutputHelper Output) : DbContainerFixture<PostgreSqlContainer>
+    public sealed class MigrationTests(ITestOutputHelper Output) : DbContainerFixture<PostgreSqlContainer>
     {
         [Fact]
         [Category(Test.PostgreSQL)]

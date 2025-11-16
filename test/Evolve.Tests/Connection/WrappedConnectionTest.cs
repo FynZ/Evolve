@@ -7,7 +7,7 @@ using Xunit;
 
 namespace EvolveDb.Tests.Connection
 {
-    public record WrappedConnectionTest : DbContainerFixture<PostgreSqlContainer>
+    public sealed class WrappedConnectionTest : DbContainerFixture<PostgreSqlContainer>
     {
         [Fact]
         [Category(Test.Connection)]

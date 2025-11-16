@@ -8,7 +8,7 @@ using Xunit.Abstractions;
 
 namespace EvolveDb.Tests.Integration.PostgreSql
 {
-    public record Scenario007(ITestOutputHelper Output) : Scenario<PostgreSqlContainer>(Output)
+    public sealed class Scenario007(ITestOutputHelper Output) : Scenario<PostgreSqlContainer>(Output)
     {
         [Fact]
         [Category(Test.PostgreSQL, Test.Sceanario)]

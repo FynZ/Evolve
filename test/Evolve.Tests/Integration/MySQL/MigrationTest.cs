@@ -5,7 +5,7 @@ using static EvolveDb.Tests.TestContext;
 
 namespace EvolveDb.Tests.Integration.MySql
 {
-    public record MigrationTest(ITestOutputHelper Output) : DbContainerFixture<MySQLContainer>
+    public sealed class MigrationTest(ITestOutputHelper Output) : DbContainerFixture<MySQLContainer>
     {
         [Fact]
         [Category(Test.MySQL)]

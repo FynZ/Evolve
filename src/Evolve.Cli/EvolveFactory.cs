@@ -1,4 +1,6 @@
-﻿namespace EvolveDb.Cli
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace EvolveDb.Cli
 {
     using System;
     using System.Collections.Generic;
@@ -15,6 +17,7 @@
     using MySqlConnector;
     using Npgsql;
 
+    [RequiresUnreferencedCode("This functionality is not compatible with trimming")]
     internal static class EvolveFactory
     {
         public static Evolve Build(Program options, Action<string> logInfoDelegate = null)

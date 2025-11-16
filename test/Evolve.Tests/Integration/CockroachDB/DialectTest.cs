@@ -5,7 +5,7 @@ using EvolveDb.Tests.Infrastructure;
 
 namespace EvolveDb.Tests.Integration.CockroachDb
 {
-    public record DialectTest : DbContainerFixture<CockroachDBContainer>
+    public sealed class DialectTest : DbContainerFixture<CockroachDBContainer>
     {
         [FactSkippedOnAppVeyor]
         [Category(Test.CockroachDB)]

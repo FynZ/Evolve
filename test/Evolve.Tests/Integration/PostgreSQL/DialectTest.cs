@@ -6,7 +6,7 @@ using Xunit;
 
 namespace EvolveDb.Tests.Integration.PostgregSql
 {
-    public record DialectTest : DbContainerFixture<PostgreSqlContainer>
+    public sealed class DialectTest : DbContainerFixture<PostgreSqlContainer>
     {
         [Fact]
         [Category(Test.PostgreSQL)]

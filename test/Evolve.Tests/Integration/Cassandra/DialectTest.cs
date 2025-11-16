@@ -6,7 +6,7 @@ using Xunit;
 
 namespace EvolveDb.Tests.Integration.Cassandra
 {
-    public record DialectTest : DbContainerFixture<CassandraContainer>
+    public sealed class DialectTest : DbContainerFixture<CassandraContainer>
     {
         /// <summary>
         ///     Second part of the integration test.

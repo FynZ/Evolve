@@ -11,7 +11,7 @@ using static EvolveDb.Tests.TestContext;
 
 namespace EvolveDb.Tests.Integration
 {
-    public abstract record Scenario<T>(ITestOutputHelper Output) : DbContainerFixture<T> where T : IDbContainer, new()
+    public abstract class Scenario<T>(ITestOutputHelper Output) : DbContainerFixture<T> where T : IDbContainer, new()
     {
         protected readonly T _dbContainer = new();
 

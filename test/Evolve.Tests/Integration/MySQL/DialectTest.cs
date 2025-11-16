@@ -6,7 +6,7 @@ using Xunit;
 
 namespace EvolveDb.Tests.Integration.MySql
 {
-    public record DialectTest : DbContainerFixture<MySQLContainer>
+    public sealed class DialectTest : DbContainerFixture<MySQLContainer>
     {
         [Fact]
         [Category(Test.MySQL)]
